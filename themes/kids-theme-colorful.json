@@ -99,7 +99,7 @@
 		"editorLineNumber.foreground": "#858585",
 		"editorCursor.foreground": "#aeafad",
 		"editorCursor.background": "#000000",
-		"editor.selectionBackground": "#0074e7",
+		"editor.selectionBackground": "#0074e760",
 		"editorWhitespace.foreground": "#e3e4e229",
 		"editor.selectionHighlightBackground": "#add6ff26",
 		"editor.selectionHighlightBorder": "#495F77",
@@ -116,7 +116,7 @@
 		"editor.wordHighlightBackground": "#575757b8",
 		"editor.lineHighlightBackground": "#ffffff0A",
 		"editor.lineHighlightBorder": "#282828",
-		"editorLineNumber.activeForeground": "#c6c6c6",
+		"editorLineNumber.activeForeground": "#4e94ce",
 		"editorLink.activeForeground": "#4e94ce",
 		"editorRuler.foreground": "#5a5a5a",
 		"editorBracketMatch.background": "#0064001a",
@@ -637,7 +637,7 @@
 				"markup.italic.markdown"
 			],
 			"settings": {
-				"fontStyle": "italic",
+				"fontStyle": "",
 				"foreground": "#D4A5A5"
 			}
 		},
@@ -667,7 +667,7 @@
 				"punctuation.definition.italic.markdown"
 			],
 			"settings": {
-				"fontStyle": "italic",
+				"fontStyle": "",
 				"foreground": "#500015"
 			}
 		},

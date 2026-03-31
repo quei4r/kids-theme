@@ -16,12 +16,19 @@ export function activate(context: vscode.ExtensionContext) {
                 const target = vscode.ConfigurationTarget.Global;
 
                 try {
-                    const extensions = vscode.extensions.all.map(ext => ext.id);
-                    if (!extensions.includes('PKief.material-icon-theme')) {
-                        await vscode.commands.executeCommand(
-                            'workbench.extensions.installExtension',
-                            'PKief.material-icon-theme'
-                        );
+                    // 尝试安装 Material Icon Theme（可选）
+                    try {
+                        const extensions = vscode.extensions.all.map(ext => ext.id);
+                        if (!extensions.includes('PKief.material-icon-theme')) {
+                            await vscode.commands.executeCommand(
+                                'workbench.extensions.installExtension',
+                                'PKief.material-icon-theme'
+                            );
+                        }
+                        // 只有成功安装后才设置图标主题
+                        await config.update('workbench.iconTheme', 'material-icon-theme', target);
+                    } catch {
+                        // 安装失败则跳过，不影响其他设置
                     }
 
                     await config.update('workbench.startupEditor', 'none', target);
@@ -50,7 +57,6 @@ export function activate(context: vscode.ExtensionContext) {
                         "*.cfg": "cpp"
                     }, target);
                     await config.update('workbench.colorTheme', 'KIDS THEME COLORFUL', target);
-                    await config.update('workbench.iconTheme', 'material-icon-theme', target);
                     await config.update('terminal.integrated.defaultProfile.windows', 'PowerShell', target);
                 } catch (error) {
                     console.error("Erro ao aplicar configurações recomendadas:", error);

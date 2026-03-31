@@ -8,7 +8,6 @@
     "rootDir": "./src",
     "strict": true,
     "skipLibCheck": true,
-    
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true
   },
