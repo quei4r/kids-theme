@@ -32,15 +32,6 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = activate;
 const vscode = __importStar(require("vscode"));
@@ -49,54 +40,51 @@ function activate(context) {
     const currentVersion = package_json_1.version || '0.0.0';
     const previousVersion = context.globalState.get('kidsThemeVersion');
     if (currentVersion !== previousVersion) {
-        vscode.window.showInformationMessage('Deseja aplicar as configurações recomendadas do tema?', 'Sim', 'Agora não').then((resposta) => __awaiter(this, void 0, void 0, function* () {
-            if (resposta === 'Sim') {
-                const config = vscode.workspace.getConfiguration();
-                const target = vscode.ConfigurationTarget.Global;
-                try {
-                    // 尝试安装 Material Icon Theme（可选）
-                    try {
-                        const extensions = vscode.extensions.all.map(ext => ext.id);
-                        if (!extensions.includes('PKief.material-icon-theme')) {
-                            yield vscode.commands.executeCommand('workbench.extensions.installExtension', 'PKief.material-icon-theme');
-                        }
-                        // 只有成功安装后才设置图标主题
-                        yield config.update('workbench.iconTheme', 'material-icon-theme', target);
-                    }
-                    catch (_a) {
-                        // 安装失败则跳过，不影响其他设置
-                    }
-                    yield config.update('workbench.startupEditor', 'none', target);
-                    yield config.update('editor.fontSize', 17, target);
-                    yield config.update('editor.lineNumbers', 'on', target);
-                    yield config.update('editor.wordWrap', 'on', target);
-                    yield config.update('explorer.compactFolders', false, target);
-                    yield config.update('code-runner.runInTerminal', true, target);
-                    yield config.update('code-runner.clearPreviousOutput', true, target);
-                    yield config.update('code-runner.executorMap', { "python": "cls ; python -u" }, target);
-                    yield config.update('code-runner.ignoreSelection', true, target);
-                    yield config.update('security.workspace.trust.untrustedFiles', 'open', target);
-                    yield config.update('workbench.editorAssociations', {
-                        "*.exe": "default",
-                        "*.pf": "default"
-                    }, target);
-                    const liveServerConfig = config.inspect('liveServer.settings.donotShowInfoMsg');
-                    if ((liveServerConfig === null || liveServerConfig === void 0 ? void 0 : liveServerConfig.globalValue) !== undefined) {
-                        yield config.update('liveServer.settings.donotShowInfoMsg', true, target);
-                    }
-                    yield config.update('git.autofetch', true, target);
-                    yield config.update('files.autoSave', 'afterDelay', target);
-                    yield config.update('files.associations', {
-                        "*.cfg": "cpp"
-                    }, target);
-                    yield config.update('workbench.colorTheme', 'KIDS THEME COLORFUL', target);
-                    yield config.update('terminal.integrated.defaultProfile.windows', 'PowerShell', target);
+        const config = vscode.workspace.getConfiguration();
+        const target = vscode.ConfigurationTarget.Global;
+        try {
+            // 尝试安装 Material Icon Theme（可选）
+            try {
+                const extensions = vscode.extensions.all.map(ext => ext.id);
+                if (!extensions.includes('PKief.material-icon-theme')) {
+                    vscode.commands.executeCommand('workbench.extensions.installExtension', 'PKief.material-icon-theme');
                 }
-                catch (error) {
-                    console.error("Erro ao aplicar configurações recomendadas:", error);
-                }
+                config.update('workbench.iconTheme', 'material-icon-theme', target);
             }
-        }));
+            catch (_a) {
+                // 安装失败则跳过，不影响其他设置
+            }
+            config.update('workbench.startupEditor', 'none', target);
+            config.update('editor.fontSize', 17, target);
+            config.update('editor.lineNumbers', 'on', target);
+            config.update('editor.wordWrap', 'on', target);
+            config.update('explorer.compactFolders', false, target);
+            config.update('code-runner.runInTerminal', true, target);
+            config.update('code-runner.clearPreviousOutput', true, target);
+            config.update('code-runner.executorMap', { "python": "cls ; python -u" }, target);
+            config.update('code-runner.ignoreSelection', true, target);
+            config.update('security.workspace.trust.untrustedFiles', 'open', target);
+            config.update('workbench.editorAssociations', {
+                "*.exe": "default",
+                "*.pf": "default"
+            }, target);
+            const liveServerConfig = config.inspect('liveServer.settings.donotShowInfoMsg');
+            if ((liveServerConfig === null || liveServerConfig === void 0 ? void 0 : liveServerConfig.globalValue) !== undefined) {
+                config.update('liveServer.settings.donotShowInfoMsg', true, target);
+            }
+            config.update('git.autofetch', true, target);
+            config.update('files.autoSave', 'afterDelay', target);
+            config.update('files.associations', {
+                "*.cfg": "cpp"
+            }, target);
+            config.update('workbench.colorTheme', 'KIDS THEME', target);
+            config.update('terminal.integrated.defaultProfile.windows', 'PowerShell', target);
+            config.update('editor.semanticHighlighting.enabled', true, target);
+            config.update('python.analysis.semanticHighlighting', true, target);
+        }
+        catch (error) {
+            console.error("Erro ao aplicar configurações recomendadas:", error);
+        }
         context.globalState.update('kidsThemeVersion', currentVersion);
     }
 }

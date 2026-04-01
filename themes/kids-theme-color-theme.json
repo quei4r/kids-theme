@@ -268,6 +268,37 @@
     "debugExceptionWidget.background": "#000000",
     "debugExceptionWidget.border": "#474747"
 	},
+	"semanticTokenColors": {
+		"variable": "#EEFFFF",
+		"variable.local": "#EEFFFF",
+		"variable.local.declaration": "#EEFFFF",
+		"variable.global": "#F78C6C",
+		"variable.global.declaration": "#F78C6C",
+		"variable.readonly": "#F78C6C",
+		"variable.readonly.declaration": "#F78C6C",
+		"variable.parameter": "#FFD580",
+		"variable.parameter.declaration": "#FFD580",
+		"parameter": "#FFD580",
+		"parameter.declaration": "#FFD580",
+		"function": "#82AAFF",
+		"function.declaration": "#82AAFF",
+		"function.defaultLibrary": "#82AAFF",
+		"method": "#82AAFF",
+		"method.declaration": "#82AAFF",
+		"constructor": "#82AAFF",
+		"class": "#FFCB6B",
+		"class.declaration": "#FFCB6B",
+		"class.defaultLibrary": "#FFCB6B",
+		"interface": "#FFCB6B",
+		"enum": "#FFCB6B",
+		"type": "#FFCB6B",
+		"typeParameter": "#C792EA",
+		"property": "#EEFFFF",
+		"property.readonly": "#F78C6C",
+		"member": "#EEFFFF",
+		"namespace": "#C792EA",
+		"decorator": "#C792EA"
+	},
 	"tokenColors": [
 		{
 			"name": "Comment",
@@ -355,7 +386,6 @@
 			"name": "Function, Special Method",
 			"scope": [
 				"entity.name.function",
-				"meta.function-call",
 				"variable.function",
 				"support.function",
 				"keyword.other.special-method"
