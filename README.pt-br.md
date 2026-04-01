@@ -60,7 +60,7 @@ Extensões personalizadas podem ser suportadas via `settings.json`.
 
 > _"Tão escuro que absorve seus pensamentos..."_
 
-![Preview](https://github.com/MarqueesDev/kids-theme/blob/main/screenshots/preview.png?raw=true)
+![Preview](./screenshots/preview.png)
 
 ---
 

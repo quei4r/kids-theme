@@ -274,12 +274,12 @@
 		"variable.local.declaration": "#EEFFFF",
 		"variable.global": "#F78C6C",
 		"variable.global.declaration": "#F78C6C",
-		"variable.readonly": "#F78C6C",
-		"variable.readonly.declaration": "#F78C6C",
-		"variable.parameter": "#FFD580",
-		"variable.parameter.declaration": "#FFD580",
-		"parameter": "#FFD580",
-		"parameter.declaration": "#FFD580",
+		"variable.readonly": "#D97A5E",
+		"variable.readonly.declaration": "#D97A5E",
+		"variable.parameter": "#ffc5e0",
+		"variable.parameter.declaration": "#ffc5e0",
+		"parameter": "#ffc5e0",
+		"parameter.declaration": "#ffc5e0",
 		"function": "#82AAFF",
 		"function.declaration": "#82AAFF",
 		"function.defaultLibrary": "#82AAFF",
@@ -294,10 +294,10 @@
 		"type": "#FFCB6B",
 		"typeParameter": "#C792EA",
 		"property": "#EEFFFF",
-		"property.readonly": "#F78C6C",
+		"property.readonly": "#D97A5E",
 		"member": "#EEFFFF",
 		"namespace": "#C792EA",
-		"decorator": "#C792EA"
+		"decorator": "#64C8E0"
 	},
 	"tokenColors": [
 		{

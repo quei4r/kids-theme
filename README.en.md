@@ -60,7 +60,7 @@ Custom extensions can be supported via `settings.json`.
 
 > _"So dark, it absorbs your thoughts..."_
 
-![Preview](https://github.com/MarqueesDev/kids-theme/blob/main/screenshots/preview.png?raw=true)
+![Preview](./screenshots/preview.png)
 
 ---
 

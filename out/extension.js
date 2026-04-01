@@ -83,7 +83,7 @@ function activate(context) {
             config.update('python.analysis.semanticHighlighting', true, target);
         }
         catch (error) {
-            console.error("Erro ao aplicar configurações recomendadas:", error);
+            console.error("应用推荐配置时出错:", error);
         }
         context.globalState.update('kidsThemeVersion', currentVersion);
     }

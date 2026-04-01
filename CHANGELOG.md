@@ -1,7 +1,47 @@
 # 📓 Pitch Black Theme — Changelog
 
-Todas as mudanças, melhorias e correções no tema serão registradas aqui.  
+Todas as mudanças, melhorias e correções no tema serão registradas aqui.
 Este changelog segue o estilo `Keep a Changelog` e o versionamento semântico (semver).
+
+---
+
+## 📦 [0.4.7] — 2026-04-01
+### 🎨 语义高亮优化与截图更新
+
+- **语义颜色调整**:
+  - `variable.readonly`, `property.readonly`: 改为 `#D97A5E` (暗橙红)，与全局变量 `#F78C6C` 区分开
+  - `decorator`: 改为 `#64C8E0` (青蓝色)，表示装饰器是"偏绿的函数"
+
+- **文档更新**:
+  - 更新预览截图，展示新的语义高亮效果
+
+---
+
+## 📦 [0.4.6] — 2026-04-01
+### ✨ 语义高亮与自动配置
+
+- **新增语义高亮支持**:
+  - 添加 `semanticTokenColors` 配置，支持变量、函数、类等级别的语义高亮
+  - 传入参数显示为淡黄色 `#FFD580`，与本地变量、全局变量区分
+  - 移除 TextMate 的 `meta.function-call` 规则，避免参数被错误染色
+
+- **扩展功能改进**:
+  - 扩展激活时自动启用 `editor.semanticHighlighting` 和 `python.analysis.semanticHighlighting`
+  - 删除 KIDS THEME COLORFUL 主题，只保留单一主题
+  - 移除配置弹窗，改为完全自动应用推荐设置
+
+---
+
+## 📦 [0.4.5] — 2026-04-01
+### 🎨 视觉优化与依赖清理
+
+- **样式调整**:
+  - 移除所有 `tokenColors` 中的斜体样式
+  - 选中背景色添加透明度（`#0074e7` → `#0074e760`）
+  - 当前行号改为蓝色（`#c6c6c6` → `#4e94ce`）
+
+- **依赖清理**:
+  - 删除 Material Icon Theme 硬依赖声明
 
 ---
 

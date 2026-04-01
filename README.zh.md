@@ -59,7 +59,7 @@
 
 > _"如此深邃的黑暗，仿佛能吞噬你的思绪..."_
 
-![预览图](https://github.com/MarqueesDev/kids-theme/blob/main/screenshots/preview.png?raw=true)
+![预览图](./screenshots/preview.png)
 
 ---
 
